@@ -1,1 +1,1 @@
-"# ghibli-vue" 
+Ghibli movie database, using Vue
