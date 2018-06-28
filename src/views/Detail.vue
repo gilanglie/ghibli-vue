@@ -1,15 +1,15 @@
 <template>
-  <div class="about">
+  <div class="about" v-lazy-container="{ selector: 'img' }">
     <v-app >
-        <v-toolbar dark flat class="toolbar-img">
+        <v-toolbar dark flat class="toolbar-img" >
           <v-toolbar-side-icon @click="$router.replace({ 'path': '/' })"><v-icon>arrow_back</v-icon></v-toolbar-side-icon>
           <div class="overlay"></div>
-          <img class="bg-img" v-bind:src="'img/bg/'+ detail.title.split(' ').join('_') +'.jpg'" style="" />
+          <img class="bg-img" v-bind:data-src="'img/bg/'+ detail.title.split(' ').join('_') +'.jpg'" style="" />
         </v-toolbar>
         <v-layout row container pb-2>
           <v-flex xs3 md2 offset-xs1>       
               <v-card class="card-float  card-img " >
-                <img class="" v-bind:src="'img/cover/'+ detail.title.split(' ').join('_') +'.jpg'" style="" />
+                <img class="" v-bind:data-src="'img/cover/'+ detail.title.split(' ').join('_') +'.jpg'" style="" />
               </v-card> 
               <div class="sub-item">
                 <v-chip label outline color="primary">
@@ -40,7 +40,7 @@
                     <v-list two-line>
                         <v-list-tile>
                           <v-list-tile-avatar>
-                            <img :src="'img/profile/'+ detail.director.split(' ').join('_') +'.jpg'">
+                            <img :data-src="'img/profile/'+ detail.director.split(' ').join('_') +'.jpg'">
                           </v-list-tile-avatar>
                           <v-list-tile-content>
                             <v-list-tile-title v-html="detail.director"></v-list-tile-title>
@@ -49,7 +49,7 @@
                         </v-list-tile>
                         <v-list-tile>
                           <v-list-tile-avatar>
-                            <img :src="'img/profile/'+ detail.producer.split(' ').join('_') +'.jpg'">
+                            <img :data-src="'img/profile/'+ detail.producer.split(' ').join('_') +'.jpg'">
                           </v-list-tile-avatar>
                           <v-list-tile-content>
                             <v-list-tile-title v-html="detail.producer"></v-list-tile-title>

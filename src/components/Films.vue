@@ -16,8 +16,8 @@
                      class="cover-card"
                      
                      >
-                         <div class="card-img">
-                            <img v-bind:src="'img/cover/'+ film.title.split(' ').join('_') +'.jpg'"/>
+                         <div class="card-img" v-lazy-container="{ selector: 'img' }">
+                            <img v-bind:data-src="'img/cover/'+ film.title.split(' ').join('_') +'.jpg'"/>
                          </div>
                      </v-card>
                  </v-flex>
